@@ -64,10 +64,21 @@ CCLabelTTF *scoreboard;
     score= -1;
     if (score == -1) {
         NSLog(@"Latest Score Added");
-        NSString *scorestring = [[NSString alloc] initWithFormat: @"%i", latestScore];
+        NSString *scorestring = [[NSString alloc] initWithFormat: @" Your score is %i", latestScore];
         scoreboard = [CCLabelTTF labelWithString:scorestring fontName:@"Arial" fontSize:32];
+        scoreboard.color = ccORANGE;
         scoreboard.position = ccp(160, 300);
         [self addChild:scoreboard];
+        CCLabelTTF* retry = [CCLabelTTF labelWithString:@"Retry" fontName:@"Arial" fontSize:64];
+        retry.position = ccp(160, 200);
+        [self addChild:retry];
+        KKInput* input = [KKInput sharedInput];
+        if ([input isAnyTouchOnNode:retry touchPhase:KKTouchPhaseBegan])
+        {
+            
+            NSLog(@"Retry Pressed");
+            
+        }
     }
 }
 
