@@ -18,7 +18,7 @@ int latestScore= 0;
 CCLabelTTF* title;
 CCLabelTTF *scoreboard;
 CCLabelTTF *retry;
-BOOL gameisover;
+BOOL gameisover = false;
 -(id) init
 {
 	if ((self = [super init]))
@@ -39,19 +39,33 @@ BOOL gameisover;
         score = 0;
         [self scheduleUpdate];
         NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(timeisup) userInfo:nil repeats:NO];
-        gameisover = false;
+        
         
 	}
     
 	return self;
 }
+
++(id) scene
+{
+    CCScene *scene = [CCScene node];
+    
+    HelloWorldLayer *layer = [HelloWorldLayer node];
+    
+    [scene addChild: layer];
+    
+    return scene;
+}
+
+
+
 -(void) update:(ccTime)dt
 {
     if(gameisover) {
-     KKInput* input = [KKInput sharedInput];
+             KKInput* input = [KKInput sharedInput];
     if ([input isAnyTouchOnNode:retry touchPhase:KKTouchPhaseBegan])
     {
-        
+        [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
         NSLog(@"Retry Pressed");
         
     }
@@ -77,7 +91,7 @@ BOOL gameisover;
         scoreboard.color = ccORANGE;
         scoreboard.position = ccp(160, 300);
         [self addChild:scoreboard];
-        CCLabelTTF* retry = [CCLabelTTF labelWithString:@"Retry" fontName:@"Arial" fontSize:64];
+        retry = [CCLabelTTF labelWithString:@"Retry" fontName:@"Arial" fontSize:64];
         retry.position = ccp(160, 200);
         [self addChild:retry];
         gameisover = true;
@@ -88,8 +102,9 @@ BOOL gameisover;
 -(void) score
 {
     
+    KKInput* input = [KKInput sharedInput];
     
-    if ([KKInput sharedInput].touchesAvailable)
+    if (input.anyTouchBeganThisFrame)
     {
         [self removeChild:scoreboard cleanup:YES];
         NSLog(@"Touch Detected");
