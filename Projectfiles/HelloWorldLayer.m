@@ -17,8 +17,8 @@ int latestScore= 0;
 
 CCLabelTTF* title;
 CCLabelTTF *scoreboard;
-
-
+CCLabelTTF *retry;
+BOOL gameisover;
 -(id) init
 {
 	if ((self = [super init]))
@@ -39,7 +39,7 @@ CCLabelTTF *scoreboard;
         score = 0;
         [self scheduleUpdate];
         NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(timeisup) userInfo:nil repeats:NO];
-        
+        gameisover = false;
         
 	}
     
@@ -47,11 +47,19 @@ CCLabelTTF *scoreboard;
 }
 -(void) update:(ccTime)dt
 {
-    
-    
+    if(gameisover) {
+     KKInput* input = [KKInput sharedInput];
+    if ([input isAnyTouchOnNode:retry touchPhase:KKTouchPhaseBegan])
+    {
+        
+        NSLog(@"Retry Pressed");
+        
+    }
+    }
     if(score >= 0) {
         [self score];
     }
+    
     
 }
 
@@ -63,7 +71,7 @@ CCLabelTTF *scoreboard;
     latestScore= score;
     score= -1;
     if (score == -1) {
-        NSLog(@"Latest Score Added");
+        
         NSString *scorestring = [[NSString alloc] initWithFormat: @" Your score is %i", latestScore];
         scoreboard = [CCLabelTTF labelWithString:scorestring fontName:@"Arial" fontSize:32];
         scoreboard.color = ccORANGE;
@@ -72,13 +80,8 @@ CCLabelTTF *scoreboard;
         CCLabelTTF* retry = [CCLabelTTF labelWithString:@"Retry" fontName:@"Arial" fontSize:64];
         retry.position = ccp(160, 200);
         [self addChild:retry];
-        KKInput* input = [KKInput sharedInput];
-        if ([input isAnyTouchOnNode:retry touchPhase:KKTouchPhaseBegan])
-        {
-            
-            NSLog(@"Retry Pressed");
-            
-        }
+        gameisover = true;
+        
     }
 }
 
