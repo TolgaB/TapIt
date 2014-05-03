@@ -32,13 +32,13 @@ BOOL gameisover = false;
 		//label.position = [CCDirector sharedDirector].screenCenter;
 		//label.color = ccCYAN;
 		//[self addChild:label];
-        CCLabelTTF* title = [CCLabelTTF labelWithString:@"TapIt" fontName:@"Arial" fontSize:32];
-        title.position = ccp(160, 420);
+        CCLabelTTF* title = [CCLabelTTF labelWithString:@"TapIt" fontName:@"Chalkduster" fontSize:48];
+        title.position = ccp(160,420);
         title.color = ccCYAN;
         [self addChild:title];
         score = 0;
         [self scheduleUpdate];
-        NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(timeisup) userInfo:nil repeats:NO];
+        NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(timeisup) userInfo:nil repeats:NO];
         
         
 	}
@@ -67,6 +67,7 @@ BOOL gameisover = false;
     {
         [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
         NSLog(@"Retry Pressed");
+        score = 0;
         
     }
     }
@@ -83,7 +84,7 @@ BOOL gameisover = false;
     
     [self removeChild:scoreboard cleanup:YES];
     latestScore= score;
-    score= -1;
+    score = -1;
     if (score == -1) {
         
         NSString *scorestring = [[NSString alloc] initWithFormat: @" Your score is %i", latestScore];
