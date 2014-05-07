@@ -7,7 +7,7 @@
 
 #import "HelloWorldLayer.h"
 #import <Social/Social.h>
-#import "timeAttack.h"
+
 
 @interface HelloWorldLayer (PrivateMethods)
 @end
