@@ -9,6 +9,7 @@
 #import "Title.h"
 #import "HelloWorldLayer.h"
 #import "GameMode.h"
+#import "timeAttack.h"
 CCLabelTTF *frenzy;
 CCLabelTTF *timeattack;
 CCLabelTTF *catchme;
@@ -68,6 +69,14 @@ CCLabelTTF *catchme;
         [[CCDirector sharedDirector] replaceScene: (CCScene*)[[HelloWorldLayer alloc] init]];
         NSLog(@"Frenzy Button Pressed");
     }
+    
+    if ([input isAnyTouchOnNode:timeattack touchPhase:KKTouchPhaseBegan])
+    {
+        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[timeAttack alloc] init]];
+        NSLog(@"Timeattack Button Pressed");
+    }
+    
+    
     }
 
 @end

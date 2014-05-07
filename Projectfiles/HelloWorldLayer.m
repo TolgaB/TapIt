@@ -6,6 +6,8 @@
  */
 
 #import "HelloWorldLayer.h"
+#import <Social/Social.h>
+#import "timeAttack.h"
 
 @interface HelloWorldLayer (PrivateMethods)
 @end
@@ -78,6 +80,38 @@ BOOL gameisover = false;
     
 }
 
+-(void) tweetT {
+    SLComposeViewController* mySLComposerSheet= nil;
+    
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) //check if Facebook Account is linked
+    {
+        mySLComposerSheet = [[SLComposeViewController alloc] init]; //initiate the Social Controller
+        mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter]; //Tell him with what social plattform to use it, e.g. facebook or twitter
+        NSString* posteR= [[NSString alloc] initWithFormat: @"I just got %i on TapIt", latestScore];
+        [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"%@", posteR, mySLComposerSheet.serviceType]]; //the message you want to post
+        //[mySLComposerSheet addURL: [NSURL URLWithString:shortenedURL]]; //an image you could post
+        //for more instance methodes, go here:https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/SLComposeViewController_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40012205
+        [[CCDirector sharedDirector] presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
+    [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successfull";
+                break;
+            default:
+                break;
+        } //check if everythink worked properly. Give out a message on the state.
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tweet" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        //alert.tag= TAG_ALERT_OTHER;
+        [alert show];
+    }];
+    
+}
+
 
 -(void) timeisup
 {
@@ -96,7 +130,7 @@ BOOL gameisover = false;
         retry.position = ccp(160, 200);
         [self addChild:retry];
         gameisover = true;
-        
+        [self tweetT];
     }
 }
 

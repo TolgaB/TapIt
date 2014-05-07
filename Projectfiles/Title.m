@@ -9,6 +9,7 @@
 #import "Title.h"
 #import "HelloWorldLayer.h"
 #import "GameMode.h"
+#import "timeAttack.h"
 CCLabelTTF *title;
 CCLabelTTF *play;
 

@@ -52,6 +52,8 @@
 		FD35B10119155572000C0D2E /* Back-HD.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD35B0FF19155571000C0D2E /* Back-HD.jpg */; };
 		FD35B10219155572000C0D2E /* Back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD35B10019155572000C0D2E /* Back.jpg */; };
 		FD35B10519155713000C0D2E /* GameMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35B10419155713000C0D2E /* GameMode.m */; };
+		FD35B1071915966C000C0D2E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD35B1061915966C000C0D2E /* Social.framework */; };
+		FD35B10A19169F2E000C0D2E /* timeAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35B10919169F2E000C0D2E /* timeAttack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,9 @@
 		FD35B10019155572000C0D2E /* Back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Back.jpg; sourceTree = "<group>"; };
 		FD35B10319155713000C0D2E /* GameMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMode.h; sourceTree = "<group>"; };
 		FD35B10419155713000C0D2E /* GameMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMode.m; sourceTree = "<group>"; };
+		FD35B1061915966C000C0D2E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
+		FD35B10819169F2E000C0D2E /* timeAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeAttack.h; sourceTree = "<group>"; };
+		FD35B10919169F2E000C0D2E /* timeAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeAttack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD35B1071915966C000C0D2E /* Social.framework in Frameworks */,
 				DC65615C13A969B600A7AC53 /* libbox2d-ios.a in Frameworks */,
 				DC65615D13A969B600A7AC53 /* libchipmunk-ios.a in Frameworks */,
 				DC65615E13A969B600A7AC53 /* libchipmunk-spacemanager-ios.a in Frameworks */,
@@ -173,6 +179,7 @@
 		DCC1A0E613A94ED5005BD75D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD35B1061915966C000C0D2E /* Social.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,6 +247,8 @@
 				FD1EDA071914B1BB00FCF815 /* Title.m */,
 				FD35B10319155713000C0D2E /* GameMode.h */,
 				FD35B10419155713000C0D2E /* GameMode.m */,
+				FD35B10819169F2E000C0D2E /* timeAttack.h */,
+				FD35B10919169F2E000C0D2E /* timeAttack.m */,
 				DCC1A38F13A94F1A005BD75D /* HelloWorldLayer.h */,
 				DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */,
 				DCC1A38D13A94F1A005BD75D /* AppDelegate.h */,
@@ -389,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD35B10A19169F2E000C0D2E /* timeAttack.m in Sources */,
 				FD1EDA081914B1BB00FCF815 /* Title.m in Sources */,
 				FD35B10519155713000C0D2E /* GameMode.m in Sources */,
 				DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */,
