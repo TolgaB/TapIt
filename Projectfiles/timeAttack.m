@@ -8,7 +8,7 @@
 
 #import "timeAttack.h"
 #import "Title.h"
-
+#import "timeAttackWon.h"
 #import "GameMode.h"
 @implementation timeAttack
 int tscore = 0;
@@ -19,6 +19,7 @@ CCLabelTTF *firstdone;
 CCLabelTTF *dead;
 CCLabelTTF *secondDone;
 BOOL secondtimer = false;
+bool firstime = true;
 NSTimer* secondTime = nil;
 NSTimer* myTimer = nil;
 -(id) init
@@ -69,9 +70,11 @@ NSTimer* myTimer = nil;
         scoreboard.position = ccp(160, 300);
         [self addChild:scoreboard];
         if (secondtimer) {
+            if (firstime){
             NSLog(@"Program Detected The Start Fo Second Timer");
             secondTime = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(secondleveldone) userInfo:nil repeats:NO];
-            
+                firstime = false;
+            }
         }
         
     }
@@ -82,7 +85,7 @@ NSTimer* myTimer = nil;
     tlatestscore = tscore;
     tscore = 0;
     [self removeChild:scoreboard cleanup:YES];
-    if (tlatestscore > 30) {
+    if (tlatestscore > 60) {
         
         NSLog(@"Player has passed the level");
         
@@ -113,18 +116,9 @@ NSTimer* myTimer = nil;
     tlatestscore = tscore;
     tscore = 0;
     [self removeChild:scoreboard cleanup:YES];
-    if (tlatestscore > 30) {
-        
-        NSLog(@"Player has passed the level");
-        
-        secondDone = [CCLabelTTF labelWithString:@"Level 2 Completed." fontName:@"Arial" fontSize:32];
-        secondDone.position = ccp(160, 200);
-        [self addChild:secondDone];
-        
-        [secondTime invalidate];
-        secondTime = nil;
-        secondtimer = false;
-        tlatestscore = 0;
+    if (tlatestscore > 70) {
+        NSLog(@"It worked");
+        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[timeAttackWon alloc] init]];
         
     }
     else {
