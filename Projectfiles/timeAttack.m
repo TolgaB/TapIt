@@ -17,6 +17,9 @@ CCLabelTTF* title;
 CCLabelTTF *scoreboard;
 CCLabelTTF *firstdone;
 CCLabelTTF *dead;
+CCLabelTTF *secondDone;
+BOOL secondtimer = false;
+NSTimer* secondTime = nil;
 NSTimer* myTimer = nil;
 -(id) init
 {
@@ -60,12 +63,16 @@ NSTimer* myTimer = nil;
     {
         [self removeChild:firstdone];
         [self removeChild:scoreboard cleanup:YES];
-        NSLog(@"Touch Detected");
         tscore++;
         NSString *scorestring = [[NSString alloc] initWithFormat: @"%i", tscore];
         scoreboard = [CCLabelTTF labelWithString:scorestring fontName:@"Arial" fontSize:32];
         scoreboard.position = ccp(160, 300);
         [self addChild:scoreboard];
+        if (secondtimer) {
+            NSLog(@"Program Detected The Start Fo Second Timer");
+            secondTime = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(secondleveldone) userInfo:nil repeats:NO];
+            
+        }
         
     }
 }
@@ -76,6 +83,7 @@ NSTimer* myTimer = nil;
     tscore = 0;
     [self removeChild:scoreboard cleanup:YES];
     if (tlatestscore > 30) {
+        
         NSLog(@"Player has passed the level");
         
         firstdone = [CCLabelTTF labelWithString:@"Level 1 Completed." fontName:@"Arial" fontSize:32];
@@ -84,6 +92,39 @@ NSTimer* myTimer = nil;
         
         [myTimer invalidate];
         myTimer = nil;
+        secondtimer = true;
+        tlatestscore = 0;
+        
+    }
+    else {
+        NSLog(@"Player could not pass the level");
+        dead = [CCLabelTTF labelWithString:@"Too bad you couldn't pass the level" fontName:@"Arial" fontSize:32];
+        dead.position = ccp(160,240);
+        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[GameMode alloc] init]];
+        [self addChild:dead];
+    }
+    
+    
+    
+}
+//Idea (Have them switch to a scene, after level done win scene, if level lost bring it to a you lose screen.)
+-(void) secondleveldone
+{
+    tlatestscore = tscore;
+    tscore = 0;
+    [self removeChild:scoreboard cleanup:YES];
+    if (tlatestscore > 30) {
+        
+        NSLog(@"Player has passed the level");
+        
+        secondDone = [CCLabelTTF labelWithString:@"Level 2 Completed." fontName:@"Arial" fontSize:32];
+        secondDone.position = ccp(160, 200);
+        [self addChild:secondDone];
+        
+        [secondTime invalidate];
+        secondTime = nil;
+        secondtimer = false;
+        tlatestscore = 0;
         
     }
     else {
@@ -101,9 +142,12 @@ NSTimer* myTimer = nil;
 -(void) update:(ccTime)delta
 {
     
+    
     if(tscore >= 0) {
         [self score];
     }
+    
+    
     
 }
 
