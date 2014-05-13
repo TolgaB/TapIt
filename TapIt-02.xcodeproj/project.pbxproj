@@ -50,6 +50,7 @@
 		DCF95CD413A97EC500AE3B80 /* libkobold2d-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF95CCB13A97EC500AE3B80 /* libkobold2d-mac.a */; };
 		FD1EDA081914B1BB00FCF815 /* Title.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1EDA071914B1BB00FCF815 /* Title.m */; };
 		FD229C39192059B400C070E1 /* timeAttackWon.m in Sources */ = {isa = PBXBuildFile; fileRef = FD229C38192059B400C070E1 /* timeAttackWon.m */; };
+		FD229C3C192080EF00C070E1 /* lostTime.m in Sources */ = {isa = PBXBuildFile; fileRef = FD229C3B192080EF00C070E1 /* lostTime.m */; };
 		FD35B10119155572000C0D2E /* Back-HD.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD35B0FF19155571000C0D2E /* Back-HD.jpg */; };
 		FD35B10219155572000C0D2E /* Back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD35B10019155572000C0D2E /* Back.jpg */; };
 		FD35B10519155713000C0D2E /* GameMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35B10419155713000C0D2E /* GameMode.m */; };
@@ -113,6 +114,8 @@
 		FD1EDA071914B1BB00FCF815 /* Title.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Title.m; sourceTree = "<group>"; };
 		FD229C37192059B400C070E1 /* timeAttackWon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeAttackWon.h; sourceTree = "<group>"; };
 		FD229C38192059B400C070E1 /* timeAttackWon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeAttackWon.m; sourceTree = "<group>"; };
+		FD229C3A192080EF00C070E1 /* lostTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lostTime.h; sourceTree = "<group>"; };
+		FD229C3B192080EF00C070E1 /* lostTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lostTime.m; sourceTree = "<group>"; };
 		FD35B0FF19155571000C0D2E /* Back-HD.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Back-HD.jpg"; sourceTree = "<group>"; };
 		FD35B10019155572000C0D2E /* Back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Back.jpg; sourceTree = "<group>"; };
 		FD35B10319155713000C0D2E /* GameMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMode.h; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 				FD35B10419155713000C0D2E /* GameMode.m */,
 				FD35B10819169F2E000C0D2E /* timeAttack.h */,
 				FD35B10919169F2E000C0D2E /* timeAttack.m */,
+				FD229C3A192080EF00C070E1 /* lostTime.h */,
+				FD229C3B192080EF00C070E1 /* lostTime.m */,
 				DCC1A38F13A94F1A005BD75D /* HelloWorldLayer.h */,
 				DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */,
 				DCC1A38D13A94F1A005BD75D /* AppDelegate.h */,
@@ -409,6 +414,7 @@
 				FD229C39192059B400C070E1 /* timeAttackWon.m in Sources */,
 				DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */,
 				DCC1A3AB13A94F1A005BD75D /* HelloWorldLayer.m in Sources */,
+				FD229C3C192080EF00C070E1 /* lostTime.m in Sources */,
 				DCC1A3AD13A94F1A005BD75D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

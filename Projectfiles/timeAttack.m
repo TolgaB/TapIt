@@ -10,6 +10,7 @@
 #import "Title.h"
 #import "timeAttackWon.h"
 #import "GameMode.h"
+#import "lostTime.h"
 @implementation timeAttack
 int tscore = 0;
 int tlatestscore = 0;
@@ -85,7 +86,7 @@ NSTimer* myTimer = nil;
     tlatestscore = tscore;
     tscore = 0;
     [self removeChild:scoreboard cleanup:YES];
-    if (tlatestscore > 60) {
+    if (tlatestscore > 10) {
         
         NSLog(@"Player has passed the level");
         
@@ -101,10 +102,7 @@ NSTimer* myTimer = nil;
     }
     else {
         NSLog(@"Player could not pass the level");
-        dead = [CCLabelTTF labelWithString:@"Too bad you couldn't pass the level" fontName:@"Arial" fontSize:32];
-        dead.position = ccp(160,240);
-        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[GameMode alloc] init]];
-        [self addChild:dead];
+        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[lostTime alloc] init]];
     }
     
     
@@ -123,10 +121,7 @@ NSTimer* myTimer = nil;
     }
     else {
         NSLog(@"Player could not pass the level");
-        dead = [CCLabelTTF labelWithString:@"Too bad you couldn't pass the level" fontName:@"Arial" fontSize:32];
-        dead.position = ccp(160,240);
-        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[GameMode alloc] init]];
-        [self addChild:dead];
+        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[lostTime alloc] init]];
     }
     
     
