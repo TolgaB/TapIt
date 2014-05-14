@@ -9,5 +9,7 @@
 #import "CCLayer.h"
 
 @interface timeAttackWon : CCLayer
-
+{
+    
+}
 @end

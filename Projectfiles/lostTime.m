@@ -7,8 +7,6 @@
 //
 
 #import "lostTime.h"
-#import "Title.h"
-#import "HelloWorldLayer.h"
 #import "GameMode.h"
 #import "timeAttack.h"
 
@@ -46,7 +44,7 @@ CCLabelTTF *back;
     
     lostTime *layer = [lostTime node];
     
-    [scene addChild: layer];
+    [scene addChild:layer];
     
     return scene;
 }
