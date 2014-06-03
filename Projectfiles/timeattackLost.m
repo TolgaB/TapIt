@@ -1,19 +1,14 @@
 //
-//  lostTime.m
+//  timeattackLost.m
 //  TapIt-02
 //
-//  Created by Tolga Beser on 5/11/14.
+//  Created by Tolga Beser on 6/3/14.
 //
 //
 
-#import "lostTime.h"
+#import "timeattackLost.h"
 #import "GameMode.h"
-
-
-
-
-
-@implementation lostTime
+@implementation timeattackLost
 CCLabelTTF *youlose;
 CCLabelTTF *back;
 -(id) init
@@ -41,7 +36,7 @@ CCLabelTTF *back;
 {
     CCScene *scene = [CCScene node];
     
-    lostTime *layer = [lostTime node];
+    timeattackLost *layer = [timeattackLost node];
     
     [scene addChild:layer];
     
@@ -50,11 +45,10 @@ CCLabelTTF *back;
 
 -(void) update:(ccTime)delta
 {
-   KKInput* input = [KKInput sharedInput];
-     if ([input isAnyTouchOnNode:back touchPhase:KKTouchPhaseBegan])
-     {
-         [[CCDirector sharedDirector] replaceScene: (CCScene*)[[GameMode alloc] init]];
-     }
+    KKInput* input = [KKInput sharedInput];
+    if ([input isAnyTouchOnNode:back touchPhase:KKTouchPhaseBegan])
+    {
+        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[GameMode alloc] init]];
+    }
 }
-
 @end

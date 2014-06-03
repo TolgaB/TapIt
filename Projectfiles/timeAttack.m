@@ -8,8 +8,7 @@
 
 #import "timeAttack.h"
 #import "timeAttackWon.h"
-#import "GameMode.h"
-#import "lostTime.h"
+#import "timeattackLost.h"
 @implementation timeAttack
 int tscore = 0;
 int tlatestscore = 0;
@@ -101,7 +100,7 @@ NSTimer* myTimer = nil;
     }
     else {
         NSLog(@"Player could not pass the level");
-        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[lostTime alloc] init]];
+        [[CCDirector sharedDirector] replaceScene:[timeattackLost node]];
     }
     
     
@@ -113,14 +112,14 @@ NSTimer* myTimer = nil;
     tlatestscore = tscore;
     tscore = 0;
     [self removeChild:scoreboard cleanup:YES];
-    if (tlatestscore > 70) {
+    if (tlatestscore > 30) {
         NSLog(@"It worked");
         [[CCDirector sharedDirector] replaceScene: (CCScene*)[[timeAttackWon alloc] init]];
         
     }
     else {
         NSLog(@"Player could not pass the level");
-        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[lostTime alloc] init]];
+        [[CCDirector sharedDirector] replaceScene:[timeattackLost node]];
     }
     
     

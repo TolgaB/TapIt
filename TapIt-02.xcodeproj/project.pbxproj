@@ -56,6 +56,7 @@
 		FD35B10519155713000C0D2E /* GameMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35B10419155713000C0D2E /* GameMode.m */; };
 		FD35B1071915966C000C0D2E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD35B1061915966C000C0D2E /* Social.framework */; };
 		FD35B10A19169F2E000C0D2E /* timeAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35B10919169F2E000C0D2E /* timeAttack.m */; };
+		FDA734A7193E3A9B00C872C3 /* timeattackLost.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA734A6193E3A9B00C872C3 /* timeattackLost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,8 @@
 		FD35B1061915966C000C0D2E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
 		FD35B10819169F2E000C0D2E /* timeAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeAttack.h; sourceTree = "<group>"; };
 		FD35B10919169F2E000C0D2E /* timeAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeAttack.m; sourceTree = "<group>"; };
+		FDA734A5193E3A9B00C872C3 /* timeattackLost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeattackLost.h; sourceTree = "<group>"; };
+		FDA734A6193E3A9B00C872C3 /* timeattackLost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeattackLost.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +262,8 @@
 				FD35B10919169F2E000C0D2E /* timeAttack.m */,
 				FD229C3A192080EF00C070E1 /* lostTime.h */,
 				FD229C3B192080EF00C070E1 /* lostTime.m */,
+				FDA734A5193E3A9B00C872C3 /* timeattackLost.h */,
+				FDA734A6193E3A9B00C872C3 /* timeattackLost.m */,
 				DCC1A38F13A94F1A005BD75D /* HelloWorldLayer.h */,
 				DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */,
 				DCC1A38D13A94F1A005BD75D /* AppDelegate.h */,
@@ -411,6 +416,7 @@
 				FD35B10A19169F2E000C0D2E /* timeAttack.m in Sources */,
 				FD1EDA081914B1BB00FCF815 /* Title.m in Sources */,
 				FD35B10519155713000C0D2E /* GameMode.m in Sources */,
+				FDA734A7193E3A9B00C872C3 /* timeattackLost.m in Sources */,
 				FD229C39192059B400C070E1 /* timeAttackWon.m in Sources */,
 				DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */,
 				DCC1A3AB13A94F1A005BD75D /* HelloWorldLayer.m in Sources */,
