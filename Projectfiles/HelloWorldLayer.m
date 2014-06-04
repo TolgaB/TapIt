@@ -13,14 +13,14 @@
 @end
 
 @implementation HelloWorldLayer
-
+//These are the global variable
 int score= 0;
 int latestScore= 0;
 CCSprite *twitter;
 CCLabelTTF* title;
 CCLabelTTF *scoreboard;
 CCLabelTTF *retry;
-BOOL retryPresssed = false;
+BOOL retryPressed = false;
 BOOL gameisover = false;
 -(id) init
 {
@@ -65,19 +65,20 @@ BOOL gameisover = false;
 -(void) update:(ccTime)dt
 {
     if(gameisover) {
-             KKInput* input = [KKInput sharedInput];
+        KKInput* input = [KKInput sharedInput];
         if ([input isAnyTouchOnNode:retry touchPhase:KKTouchPhaseEnded])
-    {
-        if (retryPresssed = false) {
+        {
+            if (retryPressed == false) {
+                retryPressed = true;
+                NSLog(@"Test1");
+                [[CCDirector sharedDirector] replaceScene: (CCScene*)[[HelloWorldLayer alloc] init]];
+                score = 0;
+            }
             
-        
-       [[CCDirector sharedDirector] replaceScene: (CCScene*)[[HelloWorldLayer alloc] init]];
-        retryPresssed = true;
-        NSLog(@"Retry Pressed");
-        score = 0;
         }
     }
-    }
+    
+    
     if(score >= 0) {
         [self score];
     }
@@ -127,6 +128,7 @@ BOOL gameisover = false;
 
 -(void) timeisup
 {
+    retryPressed = false;
     NSLog(@"Timeisup");
     [self removeChild:scoreboard cleanup:YES];
     latestScore= score;
@@ -160,7 +162,7 @@ BOOL gameisover = false;
     
     if (input.anyTouchBeganThisFrame)
     {
-        retryPresssed = false;
+        
         [self removeChild:scoreboard cleanup:YES];
         
         score++;
