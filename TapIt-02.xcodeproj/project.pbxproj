@@ -50,13 +50,14 @@
 		DCF95CD413A97EC500AE3B80 /* libkobold2d-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF95CCB13A97EC500AE3B80 /* libkobold2d-mac.a */; };
 		FD1EDA081914B1BB00FCF815 /* Title.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1EDA071914B1BB00FCF815 /* Title.m */; };
 		FD229C39192059B400C070E1 /* timeAttackWon.m in Sources */ = {isa = PBXBuildFile; fileRef = FD229C38192059B400C070E1 /* timeAttackWon.m */; };
-		FD229C3C192080EF00C070E1 /* lostTime.m in Sources */ = {isa = PBXBuildFile; fileRef = FD229C3B192080EF00C070E1 /* lostTime.m */; };
 		FD35B10119155572000C0D2E /* Back-HD.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD35B0FF19155571000C0D2E /* Back-HD.jpg */; };
 		FD35B10219155572000C0D2E /* Back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD35B10019155572000C0D2E /* Back.jpg */; };
 		FD35B10519155713000C0D2E /* GameMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35B10419155713000C0D2E /* GameMode.m */; };
 		FD35B1071915966C000C0D2E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD35B1061915966C000C0D2E /* Social.framework */; };
 		FD35B10A19169F2E000C0D2E /* timeAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35B10919169F2E000C0D2E /* timeAttack.m */; };
-		FDA734A7193E3A9B00C872C3 /* timeattackLost.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA734A6193E3A9B00C872C3 /* timeattackLost.m */; };
+		FDA734AD193F944D00C872C3 /* lost.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA734AC193F944D00C872C3 /* lost.m */; };
+		FDA734AF193F9A1300C872C3 /* twitterlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA734AE193F9A1300C872C3 /* twitterlogo.png */; };
+		FDA734B1193F9BE400C872C3 /* tweetIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA734B0193F9BE400C872C3 /* tweetIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,8 +116,6 @@
 		FD1EDA071914B1BB00FCF815 /* Title.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Title.m; sourceTree = "<group>"; };
 		FD229C37192059B400C070E1 /* timeAttackWon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeAttackWon.h; sourceTree = "<group>"; };
 		FD229C38192059B400C070E1 /* timeAttackWon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeAttackWon.m; sourceTree = "<group>"; };
-		FD229C3A192080EF00C070E1 /* lostTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lostTime.h; sourceTree = "<group>"; };
-		FD229C3B192080EF00C070E1 /* lostTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lostTime.m; sourceTree = "<group>"; };
 		FD35B0FF19155571000C0D2E /* Back-HD.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Back-HD.jpg"; sourceTree = "<group>"; };
 		FD35B10019155572000C0D2E /* Back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Back.jpg; sourceTree = "<group>"; };
 		FD35B10319155713000C0D2E /* GameMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMode.h; sourceTree = "<group>"; };
@@ -124,8 +123,10 @@
 		FD35B1061915966C000C0D2E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
 		FD35B10819169F2E000C0D2E /* timeAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeAttack.h; sourceTree = "<group>"; };
 		FD35B10919169F2E000C0D2E /* timeAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeAttack.m; sourceTree = "<group>"; };
-		FDA734A5193E3A9B00C872C3 /* timeattackLost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeattackLost.h; sourceTree = "<group>"; };
-		FDA734A6193E3A9B00C872C3 /* timeattackLost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timeattackLost.m; sourceTree = "<group>"; };
+		FDA734AB193F944D00C872C3 /* lost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lost.h; sourceTree = "<group>"; };
+		FDA734AC193F944D00C872C3 /* lost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lost.m; sourceTree = "<group>"; };
+		FDA734AE193F9A1300C872C3 /* twitterlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterlogo.png; sourceTree = "<group>"; };
+		FDA734B0193F9BE400C872C3 /* tweetIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweetIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,15 +256,13 @@
 				FD1EDA061914B1BB00FCF815 /* Title.h */,
 				FD1EDA071914B1BB00FCF815 /* Title.m */,
 				FD35B10319155713000C0D2E /* GameMode.h */,
+				FDA734AB193F944D00C872C3 /* lost.h */,
+				FDA734AC193F944D00C872C3 /* lost.m */,
 				FD229C37192059B400C070E1 /* timeAttackWon.h */,
 				FD229C38192059B400C070E1 /* timeAttackWon.m */,
 				FD35B10419155713000C0D2E /* GameMode.m */,
 				FD35B10819169F2E000C0D2E /* timeAttack.h */,
 				FD35B10919169F2E000C0D2E /* timeAttack.m */,
-				FD229C3A192080EF00C070E1 /* lostTime.h */,
-				FD229C3B192080EF00C070E1 /* lostTime.m */,
-				FDA734A5193E3A9B00C872C3 /* timeattackLost.h */,
-				FDA734A6193E3A9B00C872C3 /* timeattackLost.m */,
 				DCC1A38F13A94F1A005BD75D /* HelloWorldLayer.h */,
 				DCC1A39013A94F1A005BD75D /* HelloWorldLayer.m */,
 				DCC1A38D13A94F1A005BD75D /* AppDelegate.h */,
@@ -277,6 +276,8 @@
 		DCC1A39413A94F1A005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FDA734B0193F9BE400C872C3 /* tweetIcon.png */,
+				FDA734AE193F9A1300C872C3 /* twitterlogo.png */,
 				FD35B0FF19155571000C0D2E /* Back-HD.jpg */,
 				FD35B10019155572000C0D2E /* Back.jpg */,
 				DCC1A39513A94F1A005BD75D /* config.lua */,
@@ -377,11 +378,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC1A0FA13A94ED5005BD75D /* Default.png in Resources */,
+				FDA734B1193F9BE400C872C3 /* tweetIcon.png in Resources */,
 				DCC1A0FE13A94ED5005BD75D /* Icon-72.png in Resources */,
 				FD35B10219155572000C0D2E /* Back.jpg in Resources */,
 				FD35B10119155572000C0D2E /* Back-HD.jpg in Resources */,
 				DCC1A10013A94ED5005BD75D /* Icon-Small-50.png in Resources */,
 				DCC1A10213A94ED5005BD75D /* Icon-Small.png in Resources */,
+				FDA734AF193F9A1300C872C3 /* twitterlogo.png in Resources */,
 				DCC1A10413A94ED5005BD75D /* Icon-Small@2x.png in Resources */,
 				DCC1A10613A94ED5005BD75D /* Icon.png in Resources */,
 				DCC1A10813A94ED5005BD75D /* Icon@2x.png in Resources */,
@@ -416,11 +419,10 @@
 				FD35B10A19169F2E000C0D2E /* timeAttack.m in Sources */,
 				FD1EDA081914B1BB00FCF815 /* Title.m in Sources */,
 				FD35B10519155713000C0D2E /* GameMode.m in Sources */,
-				FDA734A7193E3A9B00C872C3 /* timeattackLost.m in Sources */,
+				FDA734AD193F944D00C872C3 /* lost.m in Sources */,
 				FD229C39192059B400C070E1 /* timeAttackWon.m in Sources */,
 				DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */,
 				DCC1A3AB13A94F1A005BD75D /* HelloWorldLayer.m in Sources */,
-				FD229C3C192080EF00C070E1 /* lostTime.m in Sources */,
 				DCC1A3AD13A94F1A005BD75D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

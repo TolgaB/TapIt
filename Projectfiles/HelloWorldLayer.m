@@ -16,10 +16,11 @@
 
 int score= 0;
 int latestScore= 0;
-
+CCSprite *twitter;
 CCLabelTTF* title;
 CCLabelTTF *scoreboard;
 CCLabelTTF *retry;
+BOOL retryPresssed = false;
 BOOL gameisover = false;
 -(id) init
 {
@@ -65,17 +66,28 @@ BOOL gameisover = false;
 {
     if(gameisover) {
              KKInput* input = [KKInput sharedInput];
-    if ([input isAnyTouchOnNode:retry touchPhase:KKTouchPhaseBegan])
+        if ([input isAnyTouchOnNode:retry touchPhase:KKTouchPhaseEnded])
     {
-        [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
+        if (retryPresssed = false) {
+            
+        
+       [[CCDirector sharedDirector] replaceScene: (CCScene*)[[HelloWorldLayer alloc] init]];
+        retryPresssed = true;
         NSLog(@"Retry Pressed");
         score = 0;
-        
+        }
     }
     }
     if(score >= 0) {
         [self score];
     }
+    KKInput* input = [KKInput sharedInput];
+    if ([input isAnyTouchOnNode:twitter touchPhase:KKTouchPhaseBegan])
+    {
+        NSLog(@"User pressed the tweet button");
+        [self tweetT];
+    }
+    
     
     
 }
@@ -115,7 +127,7 @@ BOOL gameisover = false;
 
 -(void) timeisup
 {
-    
+    NSLog(@"Timeisup");
     [self removeChild:scoreboard cleanup:YES];
     latestScore= score;
     score = -1;
@@ -130,7 +142,14 @@ BOOL gameisover = false;
         retry.position = ccp(160, 200);
         [self addChild:retry];
         gameisover = true;
-        [self tweetT];
+        
+        
+        twitter = [CCSprite spriteWithFile:@"tweetIcon.png"];
+        twitter.position = ccp(50, 100);
+        
+        [self addChild:twitter];
+        
+        
     }
 }
 
@@ -141,8 +160,9 @@ BOOL gameisover = false;
     
     if (input.anyTouchBeganThisFrame)
     {
+        retryPresssed = false;
         [self removeChild:scoreboard cleanup:YES];
-        NSLog(@"Touch Detected");
+        
         score++;
         NSString *scorestring = [[NSString alloc] initWithFormat: @"%i", score];
         scoreboard = [CCLabelTTF labelWithString:scorestring fontName:@"Arial" fontSize:32];

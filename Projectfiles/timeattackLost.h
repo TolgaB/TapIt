@@ -6,8 +6,10 @@
 //
 //
 
-#import "CCScene.h"
+#import "CCLayer.h"
 
-@interface timeattackLost : CCScene
+@interface timeattackLost : CCLayer
+{
+}
 
 @end
