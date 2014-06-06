@@ -84,7 +84,7 @@ NSTimer* myTimer = nil;
     tlatestscore = tscore;
     tscore = 0;
     [self removeChild:scoreboard cleanup:YES];
-    if (tlatestscore > 5) {
+    if (tlatestscore > 70) {
         
         NSLog(@"Player has passed the level");
         
@@ -112,7 +112,7 @@ NSTimer* myTimer = nil;
     tlatestscore = tscore;
     tscore = 0;
     [self removeChild:scoreboard cleanup:YES];
-    if (tlatestscore > 5) {
+    if (tlatestscore > 80) {
         NSLog(@"It worked");
         [[CCDirector sharedDirector] replaceScene: (CCScene*)[[timeAttackWon alloc] init]];
         

@@ -19,6 +19,7 @@ CCSprite *twitter;
 
 
 
+
 @implementation timeAttackWon
 -(id) init
 {
@@ -32,14 +33,13 @@ CCSprite *twitter;
         back = [CCLabelTTF labelWithString:@"Back" fontName:@"Arial" fontSize:24];
         back.position = ccp(160, 150);
         back.color = ccGREEN;
+        [self addChild:back];
         
         twitter = [CCSprite spriteWithFile:@"tweetIcon.png"];
         twitter.position = ccp(50, 100);
-        
         [self addChild:twitter];
         
-        
-        [self addChild:back];
+      
         
         [self scheduleUpdate];
     }
@@ -107,6 +107,7 @@ CCSprite *twitter;
         NSLog(@"User pressed the tweet button");
         [self tweetT];
     }
+    
     
 }
 

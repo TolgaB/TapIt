@@ -10,9 +10,11 @@
 #import "HelloWorldLayer.h"
 #import "GameMode.h"
 #import "timeAttack.h"
+#import "help.h"
 CCLabelTTF *frenzy;
 CCLabelTTF *timeattack;
 CCLabelTTF *catchme;
+CCLabelTTF *helper;
 
 
 
@@ -22,22 +24,23 @@ CCLabelTTF *catchme;
 {
 	if ((self = [super init]))
 	{
-        frenzy = [CCLabelTTF labelWithString:@"Frenzy" fontName:@"Arial" fontSize:32];
-        frenzy.position = ccp(160,320);
+        frenzy = [CCLabelTTF labelWithString:@"Frenzy" fontName:@"Chalkduster" fontSize:40];
+        frenzy.position = ccp(160,350);
         frenzy.color = ccRED;
         [self addChild:frenzy];
         
         
-        timeattack = [CCLabelTTF labelWithString:@"TimeAttack" fontName:@"Arial" fontSize:32];
-        timeattack.position = ccp(160,250);
-        timeattack.color = ccORANGE;
+        timeattack = [CCLabelTTF labelWithString:@"TimeAttack" fontName:@"Chalkduster" fontSize:40];
+        timeattack.position = ccp(160,270);
+        timeattack.color = ccYELLOW;
         [self addChild:timeattack];
         
+        helper = [CCLabelTTF labelWithString:@"Help" fontName:@"Arial" fontSize:20];
+        helper.position = ccp(250, 500);
+        helper.color = ccGREEN;
+        [self addChild:helper];
         
-        catchme = [CCLabelTTF labelWithString:@"CatchMe" fontName:@"Arial" fontSize:32];
-        catchme.color = ccBLUE;
-        catchme.position = ccp(160,160);
-        [self addChild:catchme];
+      
     
         
         [self scheduleUpdate];
@@ -75,7 +78,8 @@ CCLabelTTF *catchme;
         [[CCDirector sharedDirector] replaceScene: (CCScene*)[[timeAttack alloc] init]];
         NSLog(@"Timeattack Button Pressed");
     }
-    
+    if ([input isAnyTouchOnNode:helper touchPhase:KKTouchPhaseBegan]) {
+        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[help alloc] init]];    }
     
     }
 

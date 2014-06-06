@@ -7,7 +7,7 @@
 
 #import "HelloWorldLayer.h"
 #import <Social/Social.h>
-
+#import "GameMode.h"
 
 @interface HelloWorldLayer (PrivateMethods)
 @end
@@ -20,6 +20,7 @@ CCSprite *twitter;
 CCLabelTTF* title;
 CCLabelTTF *scoreboard;
 CCLabelTTF *retry;
+CCLabelTTF *backButton;
 BOOL retryPressed = false;
 BOOL gameisover = false;
 -(id) init
@@ -89,6 +90,11 @@ BOOL gameisover = false;
         [self tweetT];
     }
     
+    if ([input isAnyTouchOnNode:backButton touchPhase:KKTouchPhaseBegan]) {
+        NSLog(@"User clicked the back button");
+        [[CCDirector sharedDirector] replaceScene: (CCScene*)[[GameMode alloc] init]];
+
+    }
     
     
 }
@@ -136,13 +142,25 @@ BOOL gameisover = false;
     if (score == -1) {
         
         NSString *scorestring = [[NSString alloc] initWithFormat: @" Your score is %i", latestScore];
+        
+        
+        
         scoreboard = [CCLabelTTF labelWithString:scorestring fontName:@"Arial" fontSize:32];
         scoreboard.color = ccORANGE;
         scoreboard.position = ccp(160, 300);
         [self addChild:scoreboard];
+        
+        
         retry = [CCLabelTTF labelWithString:@"Retry" fontName:@"Arial" fontSize:64];
         retry.position = ccp(160, 200);
         [self addChild:retry];
+        
+        backButton = [CCLabelTTF labelWithString:@"Back" fontName:@"Arial" fontSize:32];
+        backButton.position = ccp(250, 100);
+        backButton.color = ccRED;
+        [self addChild:backButton];
+        
+        
         gameisover = true;
         
         

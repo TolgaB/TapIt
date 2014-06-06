@@ -58,6 +58,7 @@
 		FDA734AD193F944D00C872C3 /* lost.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA734AC193F944D00C872C3 /* lost.m */; };
 		FDA734AF193F9A1300C872C3 /* twitterlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA734AE193F9A1300C872C3 /* twitterlogo.png */; };
 		FDA734B1193F9BE400C872C3 /* tweetIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA734B0193F9BE400C872C3 /* tweetIcon.png */; };
+		FDA734B41942403300C872C3 /* help.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA734B31942403300C872C3 /* help.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +128,8 @@
 		FDA734AC193F944D00C872C3 /* lost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lost.m; sourceTree = "<group>"; };
 		FDA734AE193F9A1300C872C3 /* twitterlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterlogo.png; sourceTree = "<group>"; };
 		FDA734B0193F9BE400C872C3 /* tweetIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tweetIcon.png; sourceTree = "<group>"; };
+		FDA734B21942403300C872C3 /* help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = help.h; sourceTree = "<group>"; };
+		FDA734B31942403300C872C3 /* help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = help.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +264,8 @@
 				FD229C37192059B400C070E1 /* timeAttackWon.h */,
 				FD229C38192059B400C070E1 /* timeAttackWon.m */,
 				FD35B10419155713000C0D2E /* GameMode.m */,
+				FDA734B21942403300C872C3 /* help.h */,
+				FDA734B31942403300C872C3 /* help.m */,
 				FD35B10819169F2E000C0D2E /* timeAttack.h */,
 				FD35B10919169F2E000C0D2E /* timeAttack.m */,
 				DCC1A38F13A94F1A005BD75D /* HelloWorldLayer.h */,
@@ -421,6 +426,7 @@
 				FD35B10519155713000C0D2E /* GameMode.m in Sources */,
 				FDA734AD193F944D00C872C3 /* lost.m in Sources */,
 				FD229C39192059B400C070E1 /* timeAttackWon.m in Sources */,
+				FDA734B41942403300C872C3 /* help.m in Sources */,
 				DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */,
 				DCC1A3AB13A94F1A005BD75D /* HelloWorldLayer.m in Sources */,
 				DCC1A3AD13A94F1A005BD75D /* main.m in Sources */,
